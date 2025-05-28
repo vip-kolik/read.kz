@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read.kz</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1 id="logo" style="cursor: pointer">Read.kz</h1>
+      <div class="divider"></div>
+      <a href="https://youtube.com" target="_blank" class="youtube-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" />
+      </a>
+    </div>
+    <div class="header-right">
+      <button id="lang-btn">
+        <img src="https://flagcdn.com/w80/kz.png" alt="KZ" id="flag-icon"/>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="category-section">
+      <h2 id="category-title">Категории</h2>
+      <div id="categories">
+        <button class="category-btn" data-category="informatics">Информатика</button>
+        <button class="category-btn" data-category="math">Математика</button>
+        <button class="category-btn" data-category="history">Қазақстан тарихы</button>
+        <button class="category-btn" data-category="chemistry">Химия</button>
+        <button class="category-btn" data-category="biology">Биология</button>
+      </div>
+    </section>
+
+    <section id="books-section">
+      <h2>Книги</h2>
+      <ul id="books-list">
+        <li data-category="informatics">
+          7-сынып Алматы <a href="учебники/7 ALMATY.pdf" target="_blank" class="read-btn">Читать</a>
+        </li>
+        <li data-category="informatics">
+          8-сынып Алматы <a href="учебники/8 ALMATY.pdf" target="_blank" class="read-btn">Читать</a>
+        </li>
+        <li data-category="informatics">
+          9-сынып Алматы <a href="учебники/9 ALMATY.pdf" target="_blank" class="read-btn">Читать</a>
+        </li>
+        <li data-category="math">
+          7-сынып Математика <a href="учебники/7 MATH.pdf" target="_blank" class="read-btn">Читать</a>
+        </li>
+        <li data-category="history">
+          Қазақстан тарихы 7-сынып <a href="учебники/7 HISTORY.pdf" target="_blank" class="read-btn">Читать</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="answers-section">
+      <h2>Варианты с ответами</h2>
+      <ul id="answers-list">
+        <li data-category="informatics">
+          Информатика Вариант 1 — <button class="btn-buy" onclick="window.location.href='https://t.me/readkz_bot?start=buy_1'">Купить</button>
+        </li>
+        <li data-category="math">
+          Математика Вариант 1 — <button class="btn-buy" onclick="window.location.href='https://t.me/readkz_bot?start=buy_2'">Купить</button>
+        </li>
+        <li data-category="history">
+          Қазақстан тарихы Вариант 1 — <button class="btn-buy" onclick="window.location.href='https://t.me/readkz_bot?start=buy_3'">Купить</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Read.kz — Все права защищены.
+  </footer>
+</body>
+</html>
