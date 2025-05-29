@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
@@ -19,12 +18,17 @@ app.post('/webhook', async (req, res) => {
     const chatId = update.message.chat.id;
     const text = update.message.text || '';
 
-    if (text.startsWith('/start buy_')) {
+    if (text === '/start') {
+      await axios.post(`${TELEGRAM_API}/sendMessage`, {
+        chat_id: chatId,
+        text: 'Привет! Чтобы купить вариант, напиши команду:\n/start buy_<номер варианта>\n\nНапример: /start buy_1'
+      });
+    } else if (text.startsWith('/start buy_')) {
       const variantId = text.split('_')[1];
       pendingPayments[chatId] = variantId;
       await axios.post(`${TELEGRAM_API}/sendMessage`, {
         chat_id: chatId,
-        text: `Вы выбрали вариант ${variantId}. Отправьте-100тенге на Kaspi Gold номер +77077179415.После оплаты отправьте чек сюда.`
+        text: `Вы выбрали вариант ${variantId}. Отправьте 100 тенге на Kaspi Gold номер +77077179415. После оплаты отправьте чек сюда.`
       });
     } else if (text.startsWith('/ok')) {
       // Команда для администратора подтверждения платежа
